@@ -204,6 +204,7 @@ try {
         captcha.waitFor().then(async () => { // don't await, since element may not be shown
           // console.info('  Got hcaptcha challenge! NopeCHA extension will likely solve it.')
           console.error('  Got hcaptcha challenge! Lost trust due to too many login attempts? You can solve the captcha in the browser or get a new IP address.')
+          await notify('epic-games: got captcha during login. Please check.');
           // await page.waitForTimeout(2000);
           // const p = path.resolve(cfg.dir.screenshots, 'epic-games', 'captcha', `${filenamify(datetime())}.png`);
           // await captcha.screenshot({ path: p });
